@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời chúc ngày 20/10</title>
+    <link rel="stylesheet" href="hello.css">
+    <script src="hello.js" defer></script>
+</head>
+<body>
+    <div class="music-player">
+        <audio id="background-music" src="nhac2.mp3" loop preload="metadata"></audio>
+        <button id="toggle-music" type="button" aria-label="Bật nhạc" aria-pressed="false" title="Bật hoặc tắt nhạc">
+            <span class="music-disc" aria-hidden="true"></span>
+        </button>
+        <span id="music-status" class="visually-hidden" aria-live="polite">Đang thử phát nhạc</span>
+    </div>
+    <div id="intro">
+  <div class="intro-content">
+    <h1>🎁 Bạn có 1 món quà!</h1>
+    <p>Bấm vào nút bên dưới để mở quà và bật nhạc nhé ✨</p>
+    <button id="btn-start" type="button">Mở quà ngay</button>
+  </div>
+</div>
+    <main class="content">
+        
+        <section class="clock" aria-label="Đồng hồ ngày giờ">
+            <time id="clock-time" aria-label="Giờ hiện tại">00:00:00</time>
+            <p id="clock-date" aria-label="Ngày hiện tại"></p>
+        </section>
+
+        <h1 id="greeting-title">20/10 zui zẻ</h1>
+        <div class="message-container">
+            <p id="message">Nhân ngày Phụ nữ Việt Nam</p>
+            <p class="message-continuation">Chúc diu nhận được thật nhiều hoa, nhiều quà và luôn nở nụ cười trên môi!</p>
+            <div class="wish-cards" aria-label="Những lời chúc">
+                <div class="wish-card"><span aria-hidden="true">💐</span> Xinh đẹp</div>
+                <div class="wish-card"><span aria-hidden="true">😊</span> Vui vẻ</div>
+                <div class="wish-card"><span aria-hidden="true">🍀</span> Thuận lợi</div>
+                <div class="wish-card"><span aria-hidden="true">🕊️</span> Bình Yên</div>
+            </div>
+        </div>
+        <div class="item-buttons">
+            <button id="gift-button" type="button" aria-label="Tim nè">Tim nè</button>
+        </div>
+    </main>
+</body>
+</html>
