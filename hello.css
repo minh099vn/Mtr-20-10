@@ -134,6 +134,23 @@ body {
     color: #fff0f7;
     font-size: 0.85rem;
     font-weight: 700;
+        text-shadow: 0 1px 3px rgba(40, 0, 24, 0.75);
+    transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.wish-card:hover,
+.wish-card:focus-visible,
+.wish-card:active {
+    border-color: #ff9dcc;
+    background: rgba(218, 48, 130, 0.88);
+    box-shadow: 0 0 18px rgba(255, 105, 184, 0.5);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.wish-card:focus-visible {
+    outline: 2px solid #ffd5e9;
+    outline-offset: 3px;
 }
 
 .item-buttons {
