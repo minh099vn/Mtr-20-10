@@ -134,7 +134,7 @@ body {
     color: #fff0f7;
     font-size: 0.85rem;
     font-weight: 700;
-        text-shadow: 0 1px 3px rgba(40, 0, 24, 0.75);
+    text-shadow: 0 1px 3px rgba(40, 0, 24, 0.75);
     transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
