@@ -15,10 +15,14 @@ const musicButton = document.getElementById("toggle-music");
 const musicStatus = document.getElementById("music-status");
 
 function revealTextByLetter(element) {
-    const text = element.textContent;
+    if (!element) return;
+    const text = element.textContent.normalize("NFC");
     element.setAttribute("aria-label", text);
     let characterIndex = 0;
     const parts = text.match(/\S+|\s+/gu) || [];
+    const segmenter = typeof Intl !== "undefined" && Intl.Segmenter 
+        ? new Intl.Segmenter("vi", { granularity: "grapheme" }) 
+        : null;
 
     element.replaceChildren(...parts.map((part) => {
         if (/^\s+$/u.test(part)) {
@@ -26,10 +30,14 @@ function revealTextByLetter(element) {
             return document.createTextNode(part);
         }
 
+        const characters = segmenter 
+            ? Array.from(segmenter.segment(part), s => s.segment) 
+            : Array.from(part);
+
         const word = document.createElement("span");
         word.className = "letter-word";
         word.setAttribute("aria-hidden", "true");
-        word.replaceChildren(...Array.from(part, (character) => {
+        word.replaceChildren(...characters.map((character) => {
             const letter = document.createElement("span");
             letter.className = "letter";
             letter.style.animationDelay = `${characterIndex * (element.id === "message" ? 90 : 35)}ms`;
